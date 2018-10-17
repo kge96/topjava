@@ -8,15 +8,15 @@ import java.util.List;
 
 public interface MealService {
 
-    Meal create(Meal meal);
+    Meal create(Meal meal, int userId);
 
-    void delete(int id) throws NotFoundException;
+    void delete(int mealId, int userId) throws NotFoundException;
 
-    Meal get(int id) throws NotFoundException;
+    Meal get(int mealId, int userId) throws NotFoundException;
 
-    void update(Meal meal);
+    void update(Meal meal, int userId);
 
-    List<Meal> getAll();
+    List<Meal> getAll(int userId);
 
-    List<Meal> getBetween(LocalDateTime start, LocalDateTime end);
+    List<Meal> getBetween(LocalDateTime start, LocalDateTime end, int userId);
 }

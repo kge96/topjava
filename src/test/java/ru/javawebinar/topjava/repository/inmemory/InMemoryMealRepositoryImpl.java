@@ -65,6 +65,11 @@ public class InMemoryMealRepositoryImpl implements MealRepository {
     }
 
     @Override
+    public void deleteAll(int userId) {
+        repository.put(userId, null);
+    }
+
+    @Override
     public List<Meal> getBetween(LocalDateTime startDateTime, LocalDateTime endDateTime, int userId) {
         Objects.requireNonNull(startDateTime, "startDateTime must not be null");
         Objects.requireNonNull(endDateTime, "endDateTime must not be null");
